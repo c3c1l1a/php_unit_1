@@ -1,0 +1,13 @@
+{
+	"require": {
+	}, 
+	"require-dev":{
+		"phpunit/phpunit":"*"
+	}, 
+	"autoload":{
+		"psr-0":{
+			"stats":""
+		}
+	}
+
+}
