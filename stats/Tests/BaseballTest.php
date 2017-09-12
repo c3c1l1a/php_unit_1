@@ -13,6 +13,8 @@ class BaseballTest extends TestCase{
 		$baseball = new Baseball();
 		$result = $baseball->calc_avg($atbats, $hits);
 		$expectedresult = $hits/$atbats;
-		$this->assertEquals($expectedresult, $result); 
+		
+		$formatedexpectedresult = number_format($hits/$atbats, 3);
+		$this->assertEquals($formatedexpectedresult, $result);
 	}
 } 
