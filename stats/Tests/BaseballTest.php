@@ -25,4 +25,26 @@ class BaseballTest extends TestCase{
 		$formatedexpectedresult = 0.000;
 		$this->assertEquals($formatedexpectedresult, $result);
 	}
+
+	/**
+	* @dataProvider providerCalcArgs
+	* @covers Baseball::calc_avg
+	*
+	*/
+	public function testCalc($atbats, $hits){
+		$baseball = new Baseball();
+		$result = $baseball->calc_avg($atbats, $hits);
+		$expectedresult = $hits / $atbats;
+		$formatedexpectedresult = number_format($hits/$atbats, 3);
+		$this->assertEquals($result, $formatedexpectedresult);
+	}
+
+	public function providerCalcArgs(){
+		return array(
+			array('389', '129'),
+			array('somestring', 129),
+			array(389, 'somestring'), 
+			array('somestring', 'somestring'),
+		);
+	}
 } 

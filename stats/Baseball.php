@@ -7,7 +7,6 @@ class Baseball{
 		if ($ab == 0){
 			$avg = "0.000";
 		} else {
-			error_log($hits/$ab);
 			$avg = number_format($hits/$ab, 3);
 		}
 		return $avg;
