@@ -16,7 +16,7 @@ class Baseball{
 		if (!($total = $ab + $bb + $hp + $sac)){
 			$obp = "0.000";
 		} else {
-			$obp = number_format(($hits + $bb + $hp + $sac) / $ab, 3)
+			$obp = number_format(($hits + $bb + $hp + $sac) / $ab, 3);
 		}
 		return $obp;
 	}
