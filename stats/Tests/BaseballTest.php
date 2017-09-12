@@ -17,4 +17,12 @@ class BaseballTest extends TestCase{
 		$formatedexpectedresult = number_format($hits/$atbats, 3);
 		$this->assertEquals($formatedexpectedresult, $result);
 	}
+	public function testCalcHitsAreStrings(){
+		$atbats = 389;
+		$hits = "wedad";
+		$baseball = new Baseball();
+		$result = $baseball->calc_avg($atbats, $hits);
+		$formatedexpectedresult = 0.000;
+		$this->assertEquals($formatedexpectedresult, $result);
+	}
 } 
